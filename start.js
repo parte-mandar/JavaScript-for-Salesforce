@@ -14,12 +14,14 @@ function fn(){
 }
 fn();
 
-console.log(c);
+console.log("c: " + c);
 
 let d = 10
-function fn(){
-    d = 20 // Error: d is not declared in function scope
+function fn2(){
+    //d = 20 // Error: d is not declared in function scope
+    let d = 20 
+    console.log("d: " + d) // This will print 20
 }
-fn();
+fn2();
 
-console.log(d);
+console.log("d: " + d);
