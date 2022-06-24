@@ -36,3 +36,27 @@ console.log(str3.trim());
 str3 = str3.trim()
 console.log(str3.padStart(str3.length + 5, '*'));
 console.log(str3.padEnd(str3.length + 5, '*'));
+
+//  Finding index
+console.log(str.indexOf("Cocon"));
+console.log(str.indexOf("Bocon")); // Returns -1 since Bocon doesnt exist
+console.log(str.lastIndexOf("Cocon"));
+console.log(str.lastIndexOf("Bocon")); // Returns -1 since Bocon doesnt exist
+
+if (str.startsWith("Apple")) {
+    console.log("Starts with Apple");
+} else {
+    console.log("DOesnt start with Apple")
+}
+
+if (str.endsWith("Apple")) {
+    console.log("Ends with Apple");
+} else {
+    console.log("DOesnt End with Apple")
+}
+
+// Punctuation string
+let strPunc = "Mandy"
+let str5 = `Namaskaram! This is ${strPunc}` // Tilde (``) braces needs to be used for punctuation
+
+console.log(str5);
