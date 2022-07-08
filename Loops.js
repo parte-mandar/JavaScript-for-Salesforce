@@ -5,6 +5,12 @@ console.log("ForEach");
 myArr.forEach(element => {
     console.log(element);
 });
+// Note that one cannot have a return statement in foreach 
+// Return doesnt work in callback type functions like foreach
+// Foreach will run for the complete term by ignoring return inside
+// MDN: 
+// "There is no way to stop or break a forEach() loop other than by throwing an exception. 
+// If you need such behavior, the forEach() method is the wrong tool."
 
 // Traditional For loop
 console.log();
