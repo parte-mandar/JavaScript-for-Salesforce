@@ -1,4 +1,4 @@
-function callbackTeaser(callback, params) { // callbackTeaser() declaration
+function callbackTeaser(callback, params) { // callbackTeaser() declaration and definition
     console.log("Calling the callback");
     callback(params)
     console.log("Callback executed");
@@ -13,7 +13,7 @@ function consoleMyDetails(person){
 // There we used setTimeout() and another function 'b' as parameter.
 // Parameters to that function 'b' were simply passed as parameter to setTimeout()
 // In that case, it was the timeout (in ms)
-callbackTeaser(consoleMyDetails, { // callbackTeaser() definition
+callbackTeaser(consoleMyDetails, { // callbackTeaser() calling
     firstname: 'Mandar',
     job: 'Salesforce developer',
     hobby: 'Learning new things'
