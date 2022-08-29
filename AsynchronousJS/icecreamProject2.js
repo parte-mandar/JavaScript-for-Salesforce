@@ -18,53 +18,53 @@ let stocks = {
     toppings : ["chocolate", "peanuts"]
 }
 
-let order = async () => {
-    try{
-        await abc;
-    }
-    catch(error){
-        console.log("this is error\n", error);
-    }
-
-    finally{
-        console.log("finally");
-    }
-} 
-
-order()
-.then(() => {
-    console.log("lorem");
-    console.log();
-})
-
-let toppingsChoice = () => {
+// Returns time for every activity
+let time = (ms) => {
     return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(console.log("Which toppings would you love!!!"))
-        }, 3000)
+        if (is_shop_open) {
+            setTimeout(resolve, ms)
+        }
+        else{
+            reject(console.log("Shop is closed, sorry!!"))
+        }
     })
 }
 
-async function kitchen() {
-    console.log("A");
-    console.log("B");
-    console.log("C");
-    await toppingsChoice()
-    console.log("D");
-    console.log("E");
+let kitchen = async () => {
+    try{
+        await time(2000)
+        console.log(`Great choice, we'll get you the best ${stocks.fruits[0]} icecream`);
+        console.log("Starting the Production");
+        
+        console.log("Cutting fruits");
+        await time(2000)
 
+        console.log(`Adding ${stocks.liquid[0]} and ${stocks.liquid[1]}`);
+        await time(1000)
+
+        console.log(`Starting the machine`);
+        await time(1000)
+
+        console.log(`We're getting your ${stocks.holder[0]}`);
+        await time(2000)
+
+        console.log(`Adding ${stocks.toppings[1]} toppings`);
+        await time(3000)
+
+        console.log(`We're getting you the magic!!`);
+        await time(2000)
+
+        console.log("Here!! Please enjoy your icecream");
+    }
+    catch(error){
+        console.log("Customer left\n", error);
+    }
+    finally{
+        console.log("Shop closed!!");
+    }
 }
 
 kitchen()
 .then(() => {
-    console.log("Then I'll chill");
+    console.log("test");
 })
-.then(() => {
-    console.log("Then I'll close the shop");
-})
-
-
-console.log("doing the dishes");
-console.log("cleaning the tables");
-console.log("taking other orders");
-
