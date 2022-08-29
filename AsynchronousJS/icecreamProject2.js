@@ -23,7 +23,7 @@ let order = async () => {
         await abc;
     }
     catch(error){
-        console.log("error", error);
+        console.log("this is error\n", error);
     }
 
     finally{
@@ -31,6 +31,40 @@ let order = async () => {
     }
 } 
 
-order().then(() => {
+order()
+.then(() => {
     console.log("lorem");
+    console.log();
 })
+
+let toppingsChoice = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(console.log("Which toppings would you love!!!"))
+        }, 3000)
+    })
+}
+
+async function kitchen() {
+    console.log("A");
+    console.log("B");
+    console.log("C");
+    await toppingsChoice()
+    console.log("D");
+    console.log("E");
+
+}
+
+kitchen()
+.then(() => {
+    console.log("Then I'll chill");
+})
+.then(() => {
+    console.log("Then I'll close the shop");
+})
+
+
+console.log("doing the dishes");
+console.log("cleaning the tables");
+console.log("taking other orders");
+
